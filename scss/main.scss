@@ -1,0 +1,10 @@
+$color-fondo: white;
+
+body {
+  background-color: $color-fondo;
+
+  & p {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+}
