@@ -1,10 +1,26 @@
-$color-fondo: white;
+@import "colores";
 
 body {
   background-color: $color-fondo;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  & p {
-    margin: 0 auto;
-    padding: 0 auto;
+  & h1 {
+    font-family:sans-serif;
+    font-size: 1.8em;
+    color: $main-color;
+  }
+
+  & .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    border: dashed 2px steelblue;
+    width: 350px;
+    height: 350px;
   }
 }

@@ -1,5 +1,6 @@
 .padding {
   padding: 20px 0;
   margin: 20px 0;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box; }
