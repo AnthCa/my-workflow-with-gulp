@@ -1,9 +1,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
 var cssnano  = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
+var htmlmin = require('gulp-htmlmin');
+var browserSync = require('browser-sync').create();
 
 // funcion o tarea para utilizar browser-sync
 gulp.task('serve', ['sass'], function() {
@@ -13,6 +14,14 @@ gulp.task('serve', ['sass'], function() {
 
     gulp.watch("scss/**/*.scss", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("./*.html", ["minificar"]); // Automatizar el minficado de archivos html
+});
+
+//Tarea para minificar archivos .html
+gulp.task('minificar', function() {
+  return gulp.src('./*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('app'));
 });
 
 // Tarea o funcion para automatizar prefijos css
@@ -36,7 +45,7 @@ gulp.task('optimize', () =>
 gulp.task('sass', function(){
   return gulp.src('scss/**/*.scss')
     .pipe(sass())
-    // .pipe(cssnano())
+    // .pipe(cssnano()) //Pausando el minificado automatico
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: true
