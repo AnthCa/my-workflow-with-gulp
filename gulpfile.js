@@ -7,7 +7,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var htmlmin = require('gulp-htmlmin');
 var browserSync = require('browser-sync').create();
 
-// funcion o tarea para utilizar browser-sync
+// Servidor estatico + watching javascripy/scss/html files.
+// Static server + watching javascript/scss/html files.
 gulp.task('default', ['css', 'javascript',], function() {
     browserSync.init({
         server: "./app"
@@ -19,28 +20,32 @@ gulp.task('default', ['css', 'javascript',], function() {
     gulp.watch("./*.html", ["html"]); // Automatizar el minficado de archivos html
 });
 
-//Tarea para minificar archivos .html
+//Tarea para minificar archivos .html.
+// Task to minify .html files.
 gulp.task('html', function() {
   return gulp.src('./*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('app'));
 });
 
-//Función para minimizar imágenes
+//Tarea para minimizar imágenes
+//Task minify images
 gulp.task('images', function (){
   gulp.src('img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('app/img'))
 });
 
-//Comprimir js
+// Comprimir js
+// Compress js
 gulp.task('javascript',function () {
   gulp.src('app/js/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('app/js/dist'));
 });
 
-// Funcion para automatizar compilado de css, minificado de css, browsersync(live reload)
+// Compilado de css, minificado de css, browsersync(live reload)
+// Compile sass into CSS & auto-inject into browsers
 gulp.task('css', function(){
   return gulp.src('scss/**/*.scss')
     .pipe(sass())
