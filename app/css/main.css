@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: white;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -21,6 +21,16 @@ body {
         align-items: center;
     font-family: sans-serif;
     font-size: 1.5em;
-    border: dashed 2px steelblue;
+    border: dashed 2px red;
     width: 350px;
-    height: 350px; }
+    height: 350px;
+    color: white;
+    background-color: #990000; }
+
+article {
+  display: -ms-flexbox;
+  display: flex; }
+
+aside {
+  display: -ms-flexbox;
+  display: flex; }

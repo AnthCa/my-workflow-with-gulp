@@ -1,0 +1,1 @@
+!function(){function n(n){return n}function o(n){console.info(n,", un saludo desde Chile")}o(n("Anthony Canales  "))}();
