@@ -14,7 +14,7 @@ h1 {
   text-align: center; }
 
 .container {
-  border: 20px solid lightgrey;
+  border: 20px solid #efefef;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;

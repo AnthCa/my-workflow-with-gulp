@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var uglify= require('gulp-uglify');
+var uglify = require('gulp-uglify');
 var cssnano  = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
@@ -9,7 +9,7 @@ var browserSync = require('browser-sync').create();
 
 // Servidor estatico + watching javascripy/scss/html files.
 // Static server + watching javascript/scss/html files.
-gulp.task('default', ['css', 'javascript',], function() {
+gulp.task('default', ['css', 'javascript'], function() {
     browserSync.init({
         server: "./app"
     });
